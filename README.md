@@ -1,7 +1,6 @@
 # Machine Learning Project
 ---
-### For our final project, we will be investigating the problem of classifying computed tomography scans of lung tissue using machine learning. 
-### Our goal is to produce a script that creates, trains, and tests a machine learning model on medical imaging data from CT scans of lung tissue, predicting the classification of either lung cancer or COVID-19. 
+### For our final project, we will be investigating the problem of classifying computed tomography scans of lung tissue using machine learning. Our goal is to produce a script that creates, trains, and tests a machine learning model on medical imaging data from CT scans of lung tissue, predicting the classification of either lung cancer or COVID-19. 
 Group Members: Douglas Packard, Chris Rebello, Karina Alvarez
 
 ### Data Source 1:
@@ -12,8 +11,8 @@ Group Members: Douglas Packard, Chris Rebello, Karina Alvarez
 
 ---
 
-Data analysis and cleaning: Python Pandas
+- Data analysis and Cleaning: Python Pandas
 
-Data storage: Amazon AWS, SQL Database
+- Data Storage: Amazon AWS, SQL Database
 
-Machine learning: Scikit-learn, Tensorflow
+- Machine Learning: Scikit-learn, Tensorflow
