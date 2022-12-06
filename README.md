@@ -17,6 +17,7 @@ These files can be read and viewed with the help of the [Insight Toolkit](https:
 After identifying our two data sources
 * [Lung cancer data](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=70224216)
 * [COVID-19 data](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=89096912)
+
 from TCIA we had to find the datasets in the [Search Radiology Portal](https://nbia.cancerimagingarchive.net/nbia-search/) and then create shared "carts" by which to identify and access the data in our script using TCIA's Python utilities package
 
 ---
