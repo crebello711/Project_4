@@ -6,7 +6,7 @@ In our final project, we applied machine learning techniques to data from [the C
 ## Data Visualization
 The medical imaging data came in a DICOM format ([link](https://www.dicomstandard.org/)) which contains the arrays of pixel data as well as significant amounts of metadata about the interpretation of the data, as well as information about the imaging tests and the subject on which they were performed (de-identified so as to be anonymous prior to being made available to the public).
 
-![DICOM components](Resources/Images/medical_image_components.png)
+![DICOM components](https://github.com/crebello711/Project_4/Resources/Images/medical_image_components.png)
 
 
 
