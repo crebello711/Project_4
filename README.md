@@ -18,7 +18,8 @@ After identifying our two data sources
 * [Lung cancer data](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=70224216)
 * [COVID-19 data](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=89096912)
 
-from TCIA we had to find the datasets in the [Search Radiology Portal](https://nbia.cancerimagingarchive.net/nbia-search/) and then create shared "carts" by which to identify and access the data in our script using TCIA's Python utilities package
+from TCIA we had to find the datasets in the [Search Radiology Portal](https://nbia.cancerimagingarchive.net/nbia-search/) and then create shared "carts" by which to identify and access the data in our script using TCIA's Python utilities package ([link](https://github.com/kirbyju/TCIA_Notebooks/blob/main/tcia_utils.py))
+![getting shared cart](https://github.com/crebello711/Project_4/blob/main/Resources/Images/getting_shared_cart_name.PNG)
 
 ---
 ## Initial Proposal
