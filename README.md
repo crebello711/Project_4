@@ -73,6 +73,10 @@ We tried rescaling our data by hand, as well as with a StandardScaler function, 
 
 ![still stuck](https://github.com/crebello711/Project_4/blob/main/Resources/Images/still_stuck_after_standard_scaling.PNG)
 
+## Conclusion
+
+As the graphs above show, the ResNet50 model showed the most and earliest improvement of the testing accuracy relative to the training, so we would recommend proceeding with that model for any further work. However, we would not recommend any of models for use in medical applications at this time.
+
 ---
 ## Initial Proposal
 ### For our final project, we will be investigating the problem of classifying computed tomography scans of lung tissue using machine learning. Our goal is to produce a script that creates, trains, and tests a machine learning model on medical imaging data from CT scans of lung tissue, predicting the classification of either lung cancer or COVID-19. 
