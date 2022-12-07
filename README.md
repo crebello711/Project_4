@@ -52,7 +52,11 @@ The bulk of our results came from running our transfer models with batch sizes o
 * VGG19 Accuracy
     * ![vgg ct accruacy](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_ct_accuracy.png)
 * VGG19 ROC Curve
-    * ![vgg roc curve](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_roc_curve.PNG)       
+    * ![vgg roc curve](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_roc_curve.PNG)   
+* InceptionV3 Accuracy
+    * ![inception ct accuracy](https://github.com/crebello711/Project_4/blob/main/Resources/Images/inception_ct_accuracy.PNG)
+* Inception V3 Loss
+    * ![inception ct loss](https://github.com/crebello711/Project_4/blob/main/Resources/Images/inception_ct_loss.PNG)        
 
 ---
 ## Initial Proposal
