@@ -48,7 +48,11 @@ The bulk of our results came from running our transfer models with batch sizes o
 * ResNet50 Accuracy
     * ![resnet ct accuracy](https://github.com/crebello711/Project_4/blob/main/Resources/Images/resnet_ct_accuracy.png)
 * ResNet50 Loss
-    * ![resnet ct loss](https://github.com/crebello711/Project_4/blob/main/Resources/Images/resnet_ct_loss.png)    
+    * ![resnet ct loss](https://github.com/crebello711/Project_4/blob/main/Resources/Images/resnet_ct_loss.png)
+* VGG19 Accuracy
+    * ![vgg ct accruacy](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_ct_accuracy.png)
+* VGG19 ROC Curve
+    * ![vgg roc curve](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_roc_curve.PNG)       
 
 ---
 ## Initial Proposal
