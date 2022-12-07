@@ -31,6 +31,14 @@ Each 3d pixel array was appended to a list, while a list of target labels for th
 
 Our final step of preprocessing was to run a preprocess_inputs algorithm specific to each pretrained model, which removes the mean (with respect to the "imagenet" dataset the models were pretrained on) from each color channel.
 
+## Pretrained Models and Transfer Learning
+
+To classify our CT image data, we chose to try three different pretrained image processing models: VGG19, ResNet50, and InceptionV3. These are deep convolutional neural net models that have been pretrained on the extremely large ImageNet dataset and come with initial sets of model weights that have already been optimized from that training.
+
+Since we had our own target labels "cancer" and "covid" for the data, and did not want the models to try to classify predictions with the ImageNet labels (such, for example, as "nematode", "toilet seat", and "digital clock" that resulted from using the base predictions of the pretrained VGG19 on our data), we had to perform a transfer learning process in order to generalize these pretrained models.
+
+This entailed taking the built-in output layer of the pretrained models, and adding a Flatten, a Dropout, and finally a Dense output layer that resulted in our desired binary classification. We set only the parameters of this final layer to be trainable. For our fitting step, we also added image augmentation preprocessing which applies random rotations, shifts, and flips to the input images before running them through the network.
+
 ---
 ## Initial Proposal
 ### For our final project, we will be investigating the problem of classifying computed tomography scans of lung tissue using machine learning. Our goal is to produce a script that creates, trains, and tests a machine learning model on medical imaging data from CT scans of lung tissue, predicting the classification of either lung cancer or COVID-19. 
