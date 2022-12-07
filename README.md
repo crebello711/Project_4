@@ -77,6 +77,19 @@ We tried rescaling our data by hand, as well as with a StandardScaler function, 
 
 As the graphs above show, the ResNet50 model showed the most and earliest improvement of the testing accuracy relative to the training, so we would recommend proceeding with that model for any further work. However, we would not recommend any of models for use in medical applications at this time.
 
+### References
+
+* TCIA jupyter notebooks
+   * https://github.com/kirbyju/TCIA_Notebooks
+* Understanding DICOMs
+   * https://towardsdatascience.com/understanding-dicoms-835cd2e57d0b
+* Working with pixel data
+   * https://pydicom.github.io/pydicom/stable/old/working_with_pixel_data.html
+* Introduction to transfer learning
+   * https://machinelearningmastery.com/transfer-learning-for-deep-learning/
+* COVID-19-Detection-Flask-App on which we based our transfer learning process
+   * https://github.com/kaushikjadhav01/COVID-19-Detection-Flask-App-based-on-Chest-X-rays-and-CT-Scans        
+
 ---
 ## Initial Proposal
 ### For our final project, we will be investigating the problem of classifying computed tomography scans of lung tissue using machine learning. Our goal is to produce a script that creates, trains, and tests a machine learning model on medical imaging data from CT scans of lung tissue, predicting the classification of either lung cancer or COVID-19. 
