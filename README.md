@@ -58,6 +58,21 @@ The bulk of our results came from running our transfer models with batch sizes o
 * Inception V3 Loss
     * ![inception ct loss](https://github.com/crebello711/Project_4/blob/main/Resources/Images/inception_ct_loss.PNG)        
 
+## Discussion
+
+While all three models performed well in terms of accuracy on the datasets as we had initially processed them, we thought after our first successful runs that due to our COVID data initially coming from signed integer data, and the cancer data coming from unsigned integers, that the models may be simply detecting this trivial difference and not granting us any sort of medically useful classification abilities. 
+
+We implemented rescalings of both datasets so their numerical values were in [0,1], and tried running our models again. However, now we observed the accuracy scores stopped improving after one or two epochs, with the losses varying slightly but not improving overall. This most likely means the models are getting trapped in a local minimum and failing to truly optimize. To overcome this, we tried:
+* Varying the Adam optimizer learning rate between 0.001, 0.01, and 0.1.
+* Changing to an SGD optimizer with a learning rate of 0.1 and momentum of 0.9.
+* Varying the batch size between 100, 32, 2, and 1.
+
+None of these steps succeeded in causing the models to not get immediately trapped in the local minimum. Using a batch size of 1 caused the accuracy score to vary slightly, but never show a trend of improvement even over hundreds of epochs.
+
+We tried rescaling our data by hand, as well as with a StandardScaler function, and still the models were stuck.
+
+![still stuck](https://github.com/crebello711/Project_4/blob/main/Resources/Images/still_stuck_after_standard_scaling.PNG)
+
 ---
 ## Initial Proposal
 ### For our final project, we will be investigating the problem of classifying computed tomography scans of lung tissue using machine learning. Our goal is to produce a script that creates, trains, and tests a machine learning model on medical imaging data from CT scans of lung tissue, predicting the classification of either lung cancer or COVID-19. 
