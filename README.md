@@ -4,7 +4,7 @@
 In our final project, we applied machine learning techniques to data from [the Cancer Imaging Archive](https://www.cancerimagingarchive.net/) (TCIA). Starting from three different pretrained convolutional neural network (CNN) image recognition models, we used a transfer learning process to train the models to distinguish computed tomography (CT) scans of lung tissue between lung cancer and COVID-19 datasets, and to predict classification of new data between those two categories.
 
 ## Data Analysis and Visualization
-The medical imaging data came in the DICOM format ([link](https://www.dicomstandard.org/)) which contains the arrays of pixel data as well as significant amounts of metadata about the interpretation of the data, as well as information about the imaging tests and the subject on which they were performed (de-identified so as to be anonymous prior to being made available to the public).
+The medical imaging data came in the DICOM format ([link](https://www.dicomstandard.org/)) which contains the arrays of pixel data as well as significant amounts of metadata about the interpretation of the data, information about the imaging tests, and the subject on which they were performed (de-identified so as to be anonymous prior to being made available to the public).
 
 ![DICOM components](https://github.com/crebello711/Project_4/blob/main/Resources/Images/medical_image_components.PNG)
 
@@ -18,8 +18,10 @@ After identifying our two data sources
 * [Lung cancer data](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=70224216)
 * [COVID-19 data](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=89096912)
 
-from TCIA we had to find the datasets in the [Search Radiology Portal](https://nbia.cancerimagingarchive.net/nbia-search/) and then create shared "carts" by which to identify and access the data in our script using TCIA's Python utilities package ([link](https://github.com/kirbyju/TCIA_Notebooks/blob/main/tcia_utils.py))
+from TCIA we had to find the datasets in the [Search Radiology Portal](https://nbia.cancerimagingarchive.net/nbia-search/) and then create shared "carts" by which to identify and access the data in our script using TCIA's Python utilities package ([link](https://github.com/kirbyju/TCIA_Notebooks/blob/main/tcia_utils.py)).
 ![getting shared cart](https://github.com/crebello711/Project_4/blob/main/Resources/Images/getting_shared_cart_name.PNG)
+
+
 
 ---
 ## Initial Proposal
