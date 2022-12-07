@@ -39,6 +39,17 @@ Since we had our own target labels "cancer" and "covid" for the data, and did no
 
 This entailed taking the built-in output layer of the pretrained models, and adding a Flatten, a Dropout, and finally a Dense output layer that resulted in our desired binary classification. We set only the parameters of this final layer to be trainable. For our fitting step, we also added image augmentation preprocessing which applies random rotations, shifts, and flips to the input images before running them through the network.
 
+## Results
+
+Our initial runs were between 5 and 100 epochs but despite high accuracy scores the predictions on our testing data were only resulting in one label being predicted for all the test data. Increasing the number of epochs to 500 resulted in predictions that actually applied both target labels, so we kept with that number for the rest of our runs.
+
+The bulk of our results came from running our transfer models with batch sizes of 32, with the Adam optimizer at its default learning rate = 0.001.
+
+* ResNet50 Accuracy
+    * ![resnet ct accuracy](https://github.com/crebello711/Project_4/blob/main/Resources/Images/resnet_ct_accuracy.png)
+* ResNet50 Loss
+    * ![resnet ct loss](https://github.com/crebello711/Project_4/blob/main/Resources/Images/resnet_ct_loss.png)    
+
 ---
 ## Initial Proposal
 ### For our final project, we will be investigating the problem of classifying computed tomography scans of lung tissue using machine learning. Our goal is to produce a script that creates, trains, and tests a machine learning model on medical imaging data from CT scans of lung tissue, predicting the classification of either lung cancer or COVID-19. 
