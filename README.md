@@ -21,7 +21,15 @@ After identifying our two data sources
 from TCIA we had to find the datasets in the [Search Radiology Portal](https://nbia.cancerimagingarchive.net/nbia-search/) and then create shared "carts" by which to identify and access the data in our script using TCIA's Python utilities package ([link](https://github.com/kirbyju/TCIA_Notebooks/blob/main/tcia_utils.py)).
 ![getting shared cart](https://github.com/crebello711/Project_4/blob/main/Resources/Images/getting_shared_cart_name.PNG)
 
+We created separate shared carts for each of the two datasets so that they would be downloaded into different folders which we could label to differentiate the datasets by filepath. In each case, we downloaded and read in the DICOM files from each cart, and then performed the same preprocessing steps on them before merging the datasets. 
 
+First we had to remove all images that were not (512,512) pixels so that they were of a uniform size and could be put together into a 3 dimensional numpy array as the pretrained models we used require. Then we extracted the pixel data (a 2d numpy array) from each multi-component DICOM image file. The next step was to resize the pixel arrays to the format required for the models ((224,224) for VGG and ResNet, (299,299) for Inception).
+
+Since these pretrained models expect full-color RGB images, with three color channels of data, but our image data from the CT scans was monochrome, we had to copy our data three times to simulate the three RGB channels, and used np.stack on each pixel array to do so. The final step at this stage was transposing the arrays from the (3,N,N) shape outputted by np.stack to the (N,N,3) shape required for input to the CNN models. 
+
+Each 3d pixel array was appended to a list, while a list of target labels for the data (0 = covid data, 1 = cancer data) was created at the same time. These lists were converted to numpy arrays, which were concatenated to a single dataset and then passed through train_test_split.
+
+Our final step of preprocessing was to run a preprocess_inputs algorithm specific to each pretrained model, which removes the mean (with respect to the "imagenet" dataset the models were pretrained on) from each color channel.
 
 ---
 ## Initial Proposal
