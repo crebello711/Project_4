@@ -52,7 +52,43 @@ The bulk of our results came from running our transfer models with batch sizes o
 * VGG19 Accuracy
     * ![vgg ct accruacy](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_ct_accuracy.png)
 * VGG19 ROC Curve
-    * ![vgg roc curve](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_roc_curve.PNG)       
+    * ![vgg roc curve](https://github.com/crebello711/Project_4/blob/main/Resources/Images/vgg_roc_curve.PNG)   
+* InceptionV3 Accuracy
+    * ![inception ct accuracy](https://github.com/crebello711/Project_4/blob/main/Resources/Images/inception_ct_accuracy.PNG)
+* Inception V3 Loss
+    * ![inception ct loss](https://github.com/crebello711/Project_4/blob/main/Resources/Images/inception_ct_loss.PNG)        
+
+## Discussion
+
+While all three models performed well in terms of accuracy on the datasets as we had initially processed them, we thought after our first successful runs that due to our COVID data initially coming from signed integer data, and the cancer data coming from unsigned integers, that the models may be simply detecting this trivial difference and not granting us any sort of medically useful classification abilities. 
+
+We implemented rescalings of both datasets so their numerical values were in [0,1], and tried running our models again. However, now we observed the accuracy scores stopped improving after one or two epochs, with the losses varying slightly but not improving overall. This most likely means the models are getting trapped in a local minimum and failing to truly optimize. To overcome this, we tried:
+* Varying the Adam optimizer learning rate between 0.001, 0.01, and 0.1.
+* Changing to an SGD optimizer with a learning rate of 0.1 and momentum of 0.9.
+* Varying the batch size between 100, 32, 2, and 1.
+
+None of these steps succeeded in causing the models to not get immediately trapped in the local minimum. Using a batch size of 1 caused the accuracy score to vary slightly, but never show a trend of improvement even over hundreds of epochs.
+
+We tried rescaling our data by hand, as well as with a StandardScaler function, and still the models were stuck.
+
+![still stuck](https://github.com/crebello711/Project_4/blob/main/Resources/Images/still_stuck_after_standard_scaling.PNG)
+
+## Conclusion
+
+As the graphs above show, the ResNet50 model showed the most and earliest improvement of the testing accuracy relative to the training, so we would recommend proceeding with that model for any further work. However, we would not recommend any of models for use in medical applications at this time.
+
+### References
+
+* TCIA jupyter notebooks
+   * https://github.com/kirbyju/TCIA_Notebooks
+* Understanding DICOMs
+   * https://towardsdatascience.com/understanding-dicoms-835cd2e57d0b
+* Working with pixel data
+   * https://pydicom.github.io/pydicom/stable/old/working_with_pixel_data.html
+* Introduction to transfer learning
+   * https://machinelearningmastery.com/transfer-learning-for-deep-learning/
+* COVID-19-Detection-Flask-App on which we based our transfer learning process
+   * https://github.com/kaushikjadhav01/COVID-19-Detection-Flask-App-based-on-Chest-X-rays-and-CT-Scans        
 
 ---
 ## Initial Proposal
